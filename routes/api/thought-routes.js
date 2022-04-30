@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { addThought, removeThought, addReaction, removeReaction } = require('../../controllers/comment-controller');
+const { addThought, removeThought, addReaction, removeReaction } = require('../../controllers/thought-controller');
 // *****************^^^^^^^^^^
 
 // /api/comments/<pizzaId>
