@@ -3,32 +3,33 @@ const dateFormat = require('../utils/dateFormat');
 
 const UserSchema = new Schema(
   {
-    userName: {
+    username: {
       type: String,
+      unique: true,
       required: true,
       trim: true
     },
-    createdBy: {
+    email: {
       type: String,
       required: true,
-      trim: true
+      unique: true,
+      // match validation!!!!!!!!!!!!!!!!
     },
     createdAt: {
       type: Date,
       default: Date.now,
       get: createdAtVal => dateFormat(createdAtVal)
     },
-    size: {
-      type: String,
-      required: true,
-      enum: ['Personal', 'Small', 'Medium', 'Large', 'Extra Large'],
-      default: 'Large'
-    },
-    toppings: [],
-    comments: [
+    thoughts: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Comment'
+        ref: 'Thought'
+      }
+    ],
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
       }
     ]
   },
@@ -43,8 +44,8 @@ const UserSchema = new Schema(
 );
 
 // get total count of comments and replies on retrieval
-UserSchema.virtual('commentCount').get(function() {
-  return this.comments.reduce((total, comment) => total + comment.replies.length + 1, 0);
+UserSchema.virtual('friendCount').get(function() {
+  return this.friends.length;
 });
 
 const User = model('User', UserSchema);
