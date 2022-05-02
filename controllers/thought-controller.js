@@ -33,7 +33,7 @@ const thoughtController = {
   },
 
   // add thought to user
-  addThought({ params, body }, res) {
+  addThought({ body }, res) {
   //  console.log(body);
     Thought.create(body)
       .then(({ _id }) => {
@@ -96,8 +96,8 @@ const thoughtController = {
   },
 
   // remove comment
-  removeThought({ params }, res) {
-    Thought.findOneAndDelete({ _id: params.thoughtId })
+  removeThought({ params, body }, res) {
+    Thought.findOneAndDelete({ _id: params.id })
       .then((deletedThought) => {
         if (!deletedThought) {
           return res.status(404).json({ message: "No thought with this id!" });

@@ -15,7 +15,7 @@ const UserSchema = new Schema(
       unique: true,
       trim: true,
       // match validation!!!!!!!!!!!!!!!!
-      match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "Please enter a valid email address"]
+      //match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "Please enter a valid email address"]
     },
     // createdAt: {
     //   type: Date,
