@@ -24,8 +24,10 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 ```
 
 ## Demo
-The below video shows the User POST, GET, GET by ID, PUT, DELETE and the Thought POST Routes.
-<iframe src="https://drive.google.com/file/d/1wnLVvEjuQLUT3V-XVWDQotjuWuge-aTD/preview" width="640" height="480"></iframe>
+The below video shows the User POST, GET, GET by ID, PUT, DELETE and the Thought POST Routes.<br>
+
+https://user-images.githubusercontent.com/86737019/166175454-ca073509-fccf-4297-9282-931ed1bac84c.mp4
+
 
 ## License
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
