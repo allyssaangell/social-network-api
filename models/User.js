@@ -13,13 +13,15 @@ const UserSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+      trim: true,
       // match validation!!!!!!!!!!!!!!!!
+      match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "Please enter a valid email address"]
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: createdAtVal => dateFormat(createdAtVal)
-    },
+    // createdAt: {
+    //   type: Date,
+    //   default: Date.now,
+    //   get: createdAtVal => dateFormat(createdAtVal)
+    // },
     thoughts: [
       {
         type: Schema.Types.ObjectId,
